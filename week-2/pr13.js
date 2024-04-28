@@ -11,7 +11,6 @@ const romanToInt = function (s) {
   let summ = 0;
 
   for (let i = 0; i < s.length; i++) {
-    console.log(romanNumber[s[i - 1]], romanNumber[s[i]]);
     if (romanNumber[s[i]] < romanNumber[s[i + 1]]) {
       summ += romanNumber[s[i + 1]] - romanNumber[s[i]];
       i++;
@@ -19,7 +18,7 @@ const romanToInt = function (s) {
       summ += romanNumber[s[i]];
     }
   }
-  console.log(summ);
+  return summ;
 };
 
 const s = "III";
