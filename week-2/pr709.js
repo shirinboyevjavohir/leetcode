@@ -1,5 +1,14 @@
 const toLowerCase = function (s) {
-  return s.toLowerCase();
+  let n = "";
+  for (let i = 0; i < s.length; i++) {
+    if (s.charCodeAt(i) <= 90 && s.charCodeAt(i) >= 65) {
+      n += String.fromCharCode(s.charCodeAt(i) + 32);
+    } else {
+      n += s[i];
+    }
+  }
+
+  return n;
 };
-const s = "Salom";
-console.log(toLowerCase(s));
+const s = "HellO";
+toLowerCase(s);
