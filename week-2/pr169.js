@@ -5,9 +5,9 @@
 var majorityElement = function (nums) {
   nums.sort();
   let count = nums[Math.floor(nums.length / 2)];
-
-  console.log(count);
+  return count;
 };
+
 majorityElement([2, 3, 2, 5, 2]);
 // Given an array nums of size n, return the majority element.
 
