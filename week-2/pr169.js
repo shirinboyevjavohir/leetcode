@@ -2,13 +2,26 @@
  * @param {number[]} nums
  * @return {number}
  */
+// var majorityElement = function (nums) {
+//   nums.sort();
+//   let count = nums[Math.floor(nums.length / 2)];
+//   return count;
+// };
+
 var majorityElement = function (nums) {
-  nums.sort();
-  let count = nums[Math.floor(nums.length / 2)];
-  return count;
+  if (!nums.length) return -1;
+  let count = 0;
+  let result = nums[0];
+  for (let i = 0; i < nums.length; i++) {
+    if (count === 0) {
+      result = nums[i];
+    }
+    count = nums[i] === result ? (count += 1) : (count -= 1);
+  }
+  return result;
 };
 
-majorityElement([2, 3, 2, 5, 2]);
+console.log(majorityElement([2, 2, 1, 1, 1, 2, 2]));
 // Given an array nums of size n, return the majority element.
 
 // The majority element is the element that appears more than ⌊n / 2⌋ times. You may assume that the majority element always exists in the array.
